@@ -14,4 +14,8 @@ Park.prototype.removeDinosaur = function () {
   return this.dinosaurCollection;
 };
 
+Park.prototype.findDinosaurMostVisitors = function () {
+  return Math.max.apply( null, this.dinosaurCollection.guestsAttractedPerDay );
+};
+
 module.exports = Park;
