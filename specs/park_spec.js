@@ -41,7 +41,14 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, [dinosaur1, dinosaur, dinosaur3])
   });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function() {
+    park.addDinosaur(dinosaur1);
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur3);
+    park.removeDinosaur();
+    const actual = park.dinosaurCollection;
+    assert.deepStrictEqual(actual, [dinosaur1, dinosaur])
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
