@@ -18,4 +18,9 @@ Park.prototype.findDinosaurMostVisitors = function () {
   return Math.max.apply( null, this.dinosaurCollection.guestsAttractedPerDay );
 };
 
+Park.prototype.removeDinosaursSameSpecies = function (species) {
+  const indexOfSpecies = this.dinosaurCollection.species.indexOf(species);
+  this.dinosaurCollection.species.splice(indexOfSpecies);
+};
+
 module.exports = Park;

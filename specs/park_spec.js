@@ -9,6 +9,7 @@ describe('Park', function() {
   let dinosaur1;
   let dinosaur2;
   let dinosaur3;
+  let dinosaur4;
 
   beforeEach(function () {
     park = new Park("Jurassic Park", 100, dinosaur);
@@ -16,6 +17,7 @@ describe('Park', function() {
     dinosaur1 = new Dinosaur('Brontosaurus', 'herbivore', 25);
     dinosaur2 = new Dinosaur('Stegasaurus', 'omnivore', 35);
     dinosaur3 = new Dinosaur('Velociraptor', 'carnivore', 100);
+    dinosaur4 = new Dinosaur('Velociraptor', 'carnivore', 110);
   });
 
   it('should have a name', function() {
@@ -58,9 +60,26 @@ describe('Park', function() {
     assert.deepStrictEqual(actual, dinosaur3.guestsAttractedPerDay);
   });
 
-  it('should be able to find all dinosaurs of a particular species');
+  // it('should be able to find all dinosaurs of a particular species', function() {
+  //   park.addDinosaur(dinosaur);
+  //   park.addDinosaur(dinosaur1);
+  //   park.addDinosaur(dinosaur3);
+  //   park.addDinosaur(dinosaur4);
+  //   park.findDinosaursSameSpecies();
+  //   const actual = 2;
+  //   assert.deepStrictEqual(actual, [dinosaur3, dinosaur4]);
+  // });
 
-  it('should be able to remove all dinosaurs of a particular species');
+  it('should be able to remove all dinosaurs of a particular species', function() {
+    park.addDinosaur(dinosaur);
+      park.addDinosaur(dinosaur1);
+      park.addDinosaur(dinosaur3);
+      park.addDinosaur(dinosaur4);
+      park.removeDinosaursSameSpecies("Velociraptor");
+      const expected = [dinosaur, dinosaur1];
+      const actual = park.dinosaurCollection;
+      assert.deepStrictEqual(actual, expected);
+  });
 
 });
 
