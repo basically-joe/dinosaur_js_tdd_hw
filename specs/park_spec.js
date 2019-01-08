@@ -38,12 +38,6 @@ describe('Park', function() {
     park.addDinosaur(dinosaur);
     park.addDinosaur(dinosaur3);
     const actual = park.dinosaurCollection;
-
-    // decorator.addCanOfPaint(paintCan1);
-    // decorator.addCanOfPaint(paintCan2);
-    // const expected = 15;
-    // assert.strictEqual(decorator.calculateAmountOfPaint(), expected);
-
     assert.deepStrictEqual(actual, [dinosaur1, dinosaur, dinosaur3])
   });
 
